@@ -78,3 +78,10 @@ module Addition where
         property $ \x -> x + 1 > (x :: Int)
 
 
+  prop_additionGreater :: Int -> Bool
+  prop_additionGreater x = x + 1 > x
+
+  runQc :: IO ()
+  runQc = quickCheck prop_additionGreater
+
+
